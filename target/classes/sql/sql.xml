@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sql">								<!--     데이터베이스에서 가져온 정보의 타입 -->
+	<select id="executeQuery" parameterType="string" resultType="map">
+		${value}	
+	</select>
+	
+	<update id="executeUpdate" parameterType="string">
+	${value}	
+	</update>
+	
+	
+</mapper>  
