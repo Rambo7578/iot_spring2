@@ -49,10 +49,12 @@ public class LogPrintAspect {
 		} catch(Throwable e){
 			logger.error("error=>{}", e);	
 			Map<String,Object>map=new HashMap<String,Object>();
-//			ModelAndView mav = new ModelAndView("error/error");				
+//			ModelAndView mav = new ModelAndView("error/error");		
+			
 			String msg = ntDAO.getText(e.getMessage());	
-			//NaverMsg nm = om.readValue(msg, NaverMsg.class);
-			map.put("errorMsg",msg);
+			
+			NaverMsg nm = om.readValue(msg, NaverMsg.class);
+			map.put("errorMsg",nm.getMessage().getResult().getTranslatedText());
 			return map;
 		}
 		logger.info("@Around end, RunTime : {} ms",(System.currentTimeMillis()-startTime));		
