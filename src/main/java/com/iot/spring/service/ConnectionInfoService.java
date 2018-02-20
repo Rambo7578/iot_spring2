@@ -29,7 +29,7 @@ public interface ConnectionInfoService {
 	
 	int userDatabase(String dbName,HttpSession hs);
 	
-	
+	public List<Map<String,Object>> getTDList(String tableName,HttpSession hs);
 	
 	
 }

@@ -94,7 +94,9 @@ public class ConnectionInfoController {
 		pMap.put("dbName", dbName);
 		pMap.put("tableName", tableName);
 		List<ColumnVO> columnList = cis.getColumnList(hs, pMap);
+		List<Map<String,Object>> tDList = cis.getTDList(tableName, hs);
 		map.put("list", columnList);
+		map.put("tDList", tDList);
 		return map;
 	}
 	@RequestMapping(value="/columns", method=RequestMethod.GET)

@@ -28,7 +28,7 @@ public interface ConnectionInfoDAO {
 	
 	int userDatabase(String dbName,SqlSession ss);
 	
-	
+	List<Map<String,Object>> selectTDList(String tableName,SqlSession ss);
 	
 	
 	
