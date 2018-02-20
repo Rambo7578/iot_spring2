@@ -54,4 +54,11 @@
 	<update id="useDatabase" parameterType="string">
 		use ${value}
 	</update>
+	
+	<select id="selectUserInfo" parameterType="string" resultType="ci">
+	use ${value}
+	LIMIT 20
+	</select>
+	
+	
 </mapper>  

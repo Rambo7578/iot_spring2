@@ -14,6 +14,7 @@ import com.iot.spring.dao.ConnectionInfoDAO;
 import com.iot.spring.vo.ColumnVO;
 import com.iot.spring.vo.ConnectionInfoVO;
 import com.iot.spring.vo.TableVO;
+import com.iot.spring.vo.UserInfoVO;
 
 @Repository
 public class ConnectionInfoDAOImpl implements ConnectionInfoDAO {
@@ -58,6 +59,7 @@ public class ConnectionInfoDAOImpl implements ConnectionInfoDAO {
 	public List<Map<String, Object>> selectDatabaseList(SqlSession ss) throws Exception {
 		return ss.selectList("connection_info.selectDatabase");
 	}
+	
 	@Override
 	public List<TableVO> selectTableList(SqlSession ss,String dbName) {
 		List<TableVO> result = null;
@@ -74,5 +76,5 @@ public class ConnectionInfoDAOImpl implements ConnectionInfoDAO {
 		int result=ss.update("connection_info.useDatabase",dbName);
 		return result;
 	}
-
+	
 }

@@ -5,17 +5,31 @@ import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.session.SqlSession;
+
 import com.iot.spring.vo.ColumnVO;
 import com.iot.spring.vo.ConnectionInfoVO;
 import com.iot.spring.vo.TableVO;
+import com.iot.spring.vo.UserInfoVO;
 
 public interface ConnectionInfoService {
 	public List<ConnectionInfoVO> getConnectionInfoList(String uiId);
+	
 	ConnectionInfoVO getConnectionInfo(ConnectionInfoVO ci);
+	
 	List<ConnectionInfoVO> getConnectionInfoList(ConnectionInfoVO ci);
+	
 	void insertConnectionInfo(Map<String,Object> rMap,ConnectionInfoVO ci);
+	
 	List<Map<String,Object>> getDatabaseList(HttpSession hs, int ciNo)throws Exception ;
+	
 	List<TableVO> getTableList(HttpSession hs,String dbName);
+	
 	List<ColumnVO> getColumnList(HttpSession hs, Map<String,String> map);
+	
 	int userDatabase(String dbName,HttpSession hs);
+	
+	
+	
+	
 }

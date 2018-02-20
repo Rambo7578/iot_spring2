@@ -41,13 +41,4 @@ public class UserInfoVO {
 		return "UserInfoVO [uiName=" + uiName + ", uiID=" + uiID + ", uiPwd=" + uiPwd + ", uiEmail=" + uiEmail
 				+ ", admin=" + admin + "]";
 	}
-	
-//	public int getUiNo() {
-//		return uiNo;
-//	}
-//	public void setUiNo(int uiNo) {
-//		this.uiNo = uiNo;
-//	}
-	
-	
 }

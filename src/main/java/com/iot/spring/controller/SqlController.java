@@ -21,34 +21,30 @@ import com.iot.spring.service.SqlService;
 @RequestMapping("/sql")
 public class SqlController {
 	private static final Logger log = LoggerFactory.getLogger(SqlController.class);
-	
+
 	@Autowired
 	private SqlService sqls;
 
 	@RequestMapping(value = "/query/{sql}", method = RequestMethod.POST)
-	public @ResponseBody Map<String, Object> sqlQuery(
-			@PathVariable("sql") String sql, HttpSession hs) {
+	public @ResponseBody Map<String, Object> sqlQuery(@PathVariable("sql") String sql, HttpSession hs) {
 
 		log.info("sql=>{}", sql);
 		List<Map<String, Object>> dataList = sqls.getQueryData(sql, hs);
-		 Map<String, Object>  hm=new HashMap< String, Object >();
-		 hm.put("list",dataList);
+		int discoverdRow = dataList.size();
+		Map<String, Object> hm = new HashMap<String, Object>();
+		hm.put("list", dataList);
+		hm.put("drows", discoverdRow);
 		return hm;
 	}
-	
-	
-	
+
 	@RequestMapping(value = "/update/{sql:.+}", method = RequestMethod.POST)
-	public @ResponseBody Map<String,Object> sqlUpdate(
-			@PathVariable("sql") String sql, HttpSession hs) {
+	public @ResponseBody Map<String, Object> sqlUpdate(@PathVariable("sql") String sql, HttpSession hs) {
 
 		log.info("sql=>{}", sql);
 		int result = sqls.getUpdateResult(sql, hs);
-		Map<String,Object> map=new HashMap<String,Object>();
-		map.put("result",result);
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("result", result);
 		return map;
 	}
-	
-	
 
 }

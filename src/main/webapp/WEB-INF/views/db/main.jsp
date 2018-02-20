@@ -187,9 +187,17 @@ dhtmlxEvent(window,"load",function(){
 	   	               cLayGrid.setColTypes(colTypeStr);
 	   	               cLayGrid.init();  
 	   	               
-	   	               cLayGrid.parse({data:res.list},"js");  
-	            	}    
-	               
+	   	               cLayGrid.parse({data:res.list},"js");
+	   	               var aRow=0;
+	   	               var dRow=0;
+	   	                if(res.dRow){
+	   	                dRow=res.dRow;	
+	   	                }else if{
+	   	                	aRow=res.aRow;
+	   	                }
+	   	                ${"div.test"}.append("<br>"+"Affected row : " + aRow + "Discoverd row : "+dRow);
+	   	                }
+	   	          
 	            }         
 	            au.send(queryCB); 
 	         }         
@@ -197,10 +205,18 @@ dhtmlxEvent(window,"load",function(){
 	            var au = new AjaxUtil("${root}/sql/update/"+sql,null,"post");      
 	            function updateCB(res){
 	            	if(res.result!=0){
-	            		alert("성공");
+	            	 var aRow=0;
+		   	         var dRow=0;
+		   	             if(res.dRow){
+		   	                dRow=res.dRow;	
+		   	                }else if{
+		   	                	aRow=res.aRow;
+		   	                }
+		   	                ${"div.test"}.append("<br>"+"Affected row : " + aRow + "Discoverd row : "+dRow);
+	            	
 	            	}else{
 	            		alert("실패");
-	            	}
+	            	
 	            }
 	            au.send(updateCB);
 	         }
