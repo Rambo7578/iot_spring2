@@ -1,5 +1,6 @@
 package com.iot.spring.vo;
 
+
 public class TableVO {
 	private String tableName;
 	private String tableComment;

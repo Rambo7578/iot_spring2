@@ -13,12 +13,13 @@
 		winF.attachViewportTo("winVP");
 		popW = winF.createWindow("win1",20,30,450,500);
 		//popW.hide(); 
-		popW.setText("Login");
+		popW.setText("Join");
 		popW.hideAll(); 
 		winF.center();
 		var formObj = [
 			        {type:"settings", offsetTop:12,name:"connectionInfo",labelAlign:"left"},
 					{type:"input",name:"uiId", label:"아이디 : ",required:true},
+					{type:"button", name:"checkBtn",value: "아이디 중복체크"},
 					{type:"password",name:"uiPwd", label:"비밀번호 : ",required:true},
 					{type:"input",name:"uiName", label:"이름 : ",required:true},
 					{type:"input",name:"uiEmail", label:"이메일 : ",required:true},
@@ -27,11 +28,12 @@
 						{type: "radio", name: "admin", value: "0", label: "NO",width:100, checked: true}
 					]}, 
 					{type: "block", blockOffset: 0, list: [
-						{type: "button", name:"checkBtn",value: "아이디 중복체크"},
+						{type: "button", name:"backBtn",value: "가입"},
 						{type: "newcolumn"},
 						{type: "button", name:"cancelBtn",value: "취소"},
 						{type: "newcolumn"},
 						{type: "button", name:"backBtn",value: "돌아가기"}
+						
 					]}
 			];
 		var form = popW.attachForm(formObj,true);
