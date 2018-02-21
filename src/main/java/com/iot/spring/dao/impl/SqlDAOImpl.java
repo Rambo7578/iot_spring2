@@ -16,6 +16,25 @@ public class SqlDAOImpl implements SqlDAO {
 	
 		List<Map<String, Object>> dataList = ss.selectList("sql.executeQuery", sql);
 		
+		if(sql.indexOf("where ")!= -1) {
+			int indexWhere = sql.indexOf("where");	
+			sql = sql.substring(0, indexWhere).trim();
+		}				
+		
+		if(sql.lastIndexOf("as ") != -1) {
+			int indexAsStr = sql.lastIndexOf("as ");
+			sql = sql.substring(indexAsStr+2).trim();
+		}else {
+			int indexStr = sql.lastIndexOf(" ");	
+			sql = sql.substring(indexStr).trim();
+		}
+		String tbName = sql;
+		
+		if(dataList!=null) {
+			dataList.get(0).put("tName", tbName);
+		}
+			
+		
 		return dataList;
 	}
 
