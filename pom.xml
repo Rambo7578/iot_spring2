@@ -84,6 +84,7 @@
 		</dependency>
 
 		<!-- @Inject -->
+		<!-- javax.inject : 의존성 주입을 어노테이션으로 제공 하는 라이브러리 -->
 		<dependency>
 			<groupId>javax.inject</groupId>
 			<artifactId>javax.inject</artifactId>
@@ -91,6 +92,7 @@
 		</dependency>
 				
 		<!-- Servlet -->
+		<!-- javax.servlet : Java Servlet을 위한 라이브러리 -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
@@ -110,14 +112,19 @@
 		</dependency>
 	
 		<!-- Test -->
+		<!-- junit : 단위 테스트를 원할하게 사용하기 위해 추가한 라이브러리. -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.7</version>
 			<scope>test</scope>
 		</dependency>
-<!-- 여기서 부터 추가한 maven dependency 입니다!! -->
+        <!-- 여기서 부터 추가한 maven dependency 입니다!! -->
 		<!-- Jackson -->
+		<!-- jackson : JSON의 사용의 편의를 위해서 제공하는 라이브러리 
+		     jackson-core: Json String을 파싱 객체화 시키거나 그 반대를 위한 코어 라이브러리
+		     jackson-databinding: @RequestBody, @ResponseBody에서 String to 객체 또는 반대에 데이터를 바인딩 해주는 라이브러리-->
+		     
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-core</artifactId>
@@ -134,6 +141,9 @@
 			<version>2.9.3</version>
 		</dependency>
 		<!-- Apache Commons -->
+		<!-- commons-io : 파일 IO관련 공통을 제공하는 라이브러리.
+		     commons-fileupload : 파일 업로드를 위한 공통을 제공하는 라이브러리. 
+		     commons-dbcp2 : 커넥션 풀링을 위한 라이브러리-->
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
@@ -153,6 +163,8 @@
 		</dependency>
 
 		<!-- mariadb connector -->
+		<!-- mariadb-java-client : MariaDB, MySQL 데이터베이스에 연결을 위한 라이브러리 
+		    -->
 		<dependency>
 			<groupId>org.mariadb.jdbc</groupId>
 			<artifactId>mariadb-java-client</artifactId>
@@ -160,12 +172,14 @@
 		</dependency>
 
 		<!-- commons-dbcp2 -->
+		
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-dbcp2</artifactId>
 			<version>2.2.0</version>
 		</dependency>
 		<!-- Mybatis -->
+		<!--  mybatis : 커스텀된 SQL과 절차 맵핑을 보다 쉽게 하도록 도와주는 프래임웤이다. JDBC코드와 ResultSet의 값들을 세팅하는 것을 대신해준다. -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
@@ -173,6 +187,7 @@
 		</dependency>
 
 		<!-- Spring-jdbc -->
+		<!-- spring-jdbc : Spring JDBC는 클래스가 데이터베이스의 접근 및 JdbcTemplate을 사용하기 위한 라이브러리 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
@@ -187,12 +202,14 @@
 		</dependency>
 
 		<!-- aspectjweaver -->
+		<!-- aspectjweaver : apsects및 포인트컷을 사용하기 위한 라이브러리. -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjweaver</artifactId>
 			<version>1.6.8</version>
 		</dependency>
 		<!-- cglib -->
+		<!-- cglib : 실행중인 자바프로그램에 새로운 클래스를 추가하는 것을 가능케한다. -->
 		<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib</artifactId>
