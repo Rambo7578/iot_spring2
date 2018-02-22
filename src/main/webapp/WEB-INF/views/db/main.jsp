@@ -121,7 +121,8 @@ function tableListCB(res){
 	}
 	dbTree.openItem(parentId);
 }
-function addConnectionCB(res){
+function addConnectionCB(xhr.res){
+	res=JSON.parse('{""}');
 	console.log(res);
 }
 function dbListCB(res){

@@ -59,6 +59,4 @@
 	select * from ${value}
 	LIMIT 20
 	</select>
-	
-	
 </mapper>  
