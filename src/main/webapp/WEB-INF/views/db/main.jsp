@@ -44,7 +44,7 @@ var aLay, bLay, cLay;
 var bTabs, bTab1, bTab2, bTab3;
 var cTabs;
 var tableInfoGrid;
-
+//
 function columnListCB(res){
 	if(res.list){
 		tableInfoGrid = bTabs.tabs("tableInfo").attachGrid();
@@ -163,8 +163,12 @@ dhtmlxEvent(window,"load",function(){
 			popW.show();
 		}
 	})
+	
+	
 	var au = new AjaxUtil("${root}/connection/list",null,"get");
 	au.send(connectionListCB); 
+	
+	
 	
 	bLay = bodyLayout.cells("b");
 	bTabs = bLay.attachTabbar({
@@ -531,6 +535,7 @@ dhtmlxEvent(window,"load",function(){
 	});
 	
 	
+	//addconnection
 	cLay = bodyLayout.cells("c");
 	winF = new dhtmlXWindows();
 	popW = winF.createWindow("win1",20,30,320,300);
@@ -608,6 +613,8 @@ function printLog(msg){
 }); */
 </script>
 <body>
+
+
 	<div id="footDiv" class="my_ftr">
 		<div class="text">log</div>
 	</div>

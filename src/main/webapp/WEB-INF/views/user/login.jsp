@@ -33,6 +33,7 @@
 						{type: "button", name:"joinBtn",value: "회원가입"}
 					]}
 			];
+		
 		var form = popW.attachForm(formObj,true);
 		
 		form.attachEvent("onButtonClick",function(id){

@@ -29,6 +29,7 @@ public class ConnectionInfoController {
 	private static final Logger log = LoggerFactory.getLogger(UrlController.class);
 	@Autowired
 	private ConnectionInfoService cis;
+	//db 컨넥션 리스트
 	@RequestMapping("/list")
 	public @ResponseBody Map<String,Object> getConnectionList(HttpSession hs,Map<String,Object>map){
 		UserInfoVO ui = new UserInfoVO();
@@ -42,7 +43,7 @@ public class ConnectionInfoController {
 		return map;
 	}
 
-
+    //LV2 리스트
 	@RequestMapping(value="/db_list/{ciNo}", method=RequestMethod.GET)
 	public @ResponseBody Map<String,Object> getDatabaseList(@PathVariable("ciNo") int ciNo,
 			Map<String,Object> map,HttpSession hs) {
@@ -65,6 +66,8 @@ public class ConnectionInfoController {
 		cis.insertConnectionInfo(map, ci,hs);
 		return map;
 	}
+	
+	
 	@RequestMapping(value="/tables/{dbName}/{parentId}", method=RequestMethod.GET)
 	public @ResponseBody Map<String,Object> getTabeList(
 			@PathVariable("dbName")String dbName, 

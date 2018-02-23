@@ -28,8 +28,10 @@ public class UserInfoController {
 	private static final Logger log = LoggerFactory.getLogger(UserInfoController.class);
 	@RequestMapping(value="/login", method=RequestMethod.POST)
 	public @ResponseBody Map<String, Object> login( UserInfoVO ui, HttpSession hs){
+												//id:red   pwd:red
 		Map<String, Object> map = new HashMap<String, Object>();
 		if(uis.login(map, ui)) {
+			  //비었다 채어짐      red,red
 			hs.setAttribute("user", map.get("user"));
 		}
 		return map;
@@ -37,14 +39,14 @@ public class UserInfoController {
 	@RequestMapping(value="/join", method=RequestMethod.POST)
 	public @ResponseBody Map<String, Object> join(@RequestBody UserInfoVO ui){
 		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("msg", "회원가입 실패 임마~");
+		map.put("msg", "회원가입 실패 ~");
 		map.put("biz", false);
 		int result = uis.join(ui);
 		if(result==1) {
-			map.put("msg", "회원가입 성공 임마~");
+			map.put("msg", "회원가입 성공 ~");
 			map.put("biz", true);
 		}else if(result==2) {
-			map.put("msg", "아이디 중복 임마~");
+			map.put("msg", "아이디 중복 ~");
 		}
 		return map;
 	}
@@ -53,7 +55,7 @@ public class UserInfoController {
 	public @ResponseBody Map<String, Object> join2(@PathVariable String uiId){
 		Map<String, Object> map = new HashMap<String, Object>();
 		log.info("insertUI=>{}",uiId);
-		map.put("msg", "아이디 중복 임마~");
+		map.put("msg", "아이디 중복 ~");
 		map.put("biz", false);
 		if(uis.checkUserId(uiId)==0) {
 			map.put("msg", "없는 아이디");

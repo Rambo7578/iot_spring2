@@ -28,6 +28,7 @@ public class SqlDAOImpl implements SqlDAO {
 			int indexStr = sql.lastIndexOf(" ");	
 			sql = sql.substring(indexStr).trim();
 		}
+		
 		String tbName = sql;
 		
 		if(dataList!=null) {
